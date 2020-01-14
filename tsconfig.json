@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "outDir": "public", 
+        "module": "es6",
+        "target": "esnext",
+        
+        "allowJs": false,
+        "noImplicitAny": true,
+        "strictNullChecks": true
+    }
+}
