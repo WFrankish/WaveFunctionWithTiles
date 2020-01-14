@@ -1,9 +1,8 @@
 {
     "compilerOptions": {
-        "outDir": "public", 
+        "outDir": "public",
         "module": "es6",
-        "target": "esnext",
-        
+        "target": "es2018",
         "allowJs": false,
         "noImplicitAny": true,
         "strictNullChecks": true

@@ -3,10 +3,23 @@
 
 <head>
     <title>Getting Started</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            image-rendering: crisp-edges;
+        }
+    </style>
+    <script src="bundle.js"></script>
 </head>
 
 <body>
-    <script src="bundle.js"></script>
+    <h1>Waveform collapse</h1>
+    <input id="tilesize" type="number" />
+    <button id="run" type="button">Go!</button>
+    <canvas id="original"></canvas>
+    <canvas id="training"></canvas>
+    <canvas id="generated"></canvas>
+    <canvas id="output"></canvas>
 </body>
 
 </html>
