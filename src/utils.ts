@@ -1,4 +1,4 @@
-import { compare, Pixel } from "./types";
+import { compare } from "./types";
 
 
 export function map2D<S, T>(array: S[][], func: (s: S) => T): T[][] {
@@ -27,4 +27,13 @@ export function binarySearch<T>(arr: T[], x: T, compare: compare<T>, start = 0, 
 
 export function max(arr: number[]): number {
     return arr.slice().sort((a, b) => b - a)[0];
+}
+
+export function doAsync(func: () => void) : Promise<void> {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            func();
+            resolve();
+        }, 1);
+    });
 }

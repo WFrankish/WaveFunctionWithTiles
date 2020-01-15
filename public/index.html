@@ -2,19 +2,69 @@
 <html>
 
 <head>
-    <title>Getting Started</title>
+    <title>Wave function collapse</title>
     <style>
         canvas {
             border: 1px solid black;
             image-rendering: crisp-edges;
+        }
+
+        label, button {
+            display: block;
         }
     </style>
     <script src="bundle.js"></script>
 </head>
 
 <body>
-    <h1>Waveform collapse</h1>
-    <input id="tilesize" type="number" />
+    <h1>Wave function collapse</h1>
+    <h2>Log:</h2>
+    <div id="log"></div>
+    <label>
+        Tilesize (pixels)
+        <input id="tilesize" type="number" min="1" value="1" required />
+    </label>
+    <label>
+        Output size (tiles)
+        <input id="outputsize" type="number" min="1" value="64" required />
+    </label>
+    <label>
+        Seed (empty is random)
+        <input id="seed" type="number" min="0" />
+    </label>
+    <label>
+        N
+        <input id="modeln" type="number" min="1" value="2" required />
+    </label>
+    <label>
+        Loop input
+        <input id="periodicin" type="checkbox" />
+    </label>
+    <label>
+        Loop output
+        <input id="periodicout" type="checkbox" />
+    </label>
+    <label>
+        Symmetry type
+        <select id="symmetry">
+            <option value="1">None</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">All</option>
+        </select>
+    </label>
+    <label>
+        Ground id (empty or 0 is none)
+        <input id="ground" type="number" />
+    </label>
+    <label>
+        Attempts
+        <input id="attempts" type="number" min="0" required />
+    </label>
     <button id="run" type="button">Go!</button>
     <canvas id="original"></canvas>
     <canvas id="training"></canvas>

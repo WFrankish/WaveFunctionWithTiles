@@ -5,7 +5,7 @@ export class MyImage {
     readonly height: number;
     readonly width: number;
 
-    private constructor(width: number, height: number, data: ArrayBuffer) {
+    constructor(width: number, height: number, data: ArrayBuffer) {
         this.data = data;
         this.height = height;
         this.width = width;
@@ -14,6 +14,7 @@ export class MyImage {
     getPixel(x: number, y: number): Pixel {
         const imageView = new Uint32Array(this.data);
         const i = this.findPixel(x, y);
+    
         const pixelView = new Uint32Array([imageView[i]]);
         return new Uint8ClampedArray(pixelView.buffer);
     }

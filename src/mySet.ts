@@ -28,4 +28,8 @@ export class MySet<T> {
             return found.key;
         }
     }
+
+    find(key: number): T {
+        return this.set.filter(e => e.key === key)[0].value;
+    }
 }
